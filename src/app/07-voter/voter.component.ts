@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-voter',
   templateUrl: './voter.component.html',
-  styleUrls: ['./voter.component.css']
+  styleUrls: ['./voter.component.scss']
 })
 export class VoterComponent {
   @Input() othersVote = 0;

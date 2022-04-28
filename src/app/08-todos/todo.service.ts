@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class TodoService {
@@ -12,7 +13,7 @@ export class TodoService {
   }
 
   getTodos() {
-    return this.http.get('...').pipe(map(res => res as any));
+    return this.http.get('gettodos').pipe(map(res => res as any));
   }
 
   getTodosPromise() {
@@ -21,5 +22,9 @@ export class TodoService {
 
   delete(id) {
     return this.http.delete('...').pipe(map(res => res as any));
+  }
+
+  getData(): Observable<any> {
+    return this.http.get('/app/data').pipe(map(res => res as any));
   }
 }
